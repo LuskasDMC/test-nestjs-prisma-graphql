@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  database:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: 'test-nestjs-graphql-prisma'
+      POSTGRES_PASSWORD: 'postgres'
+    ports:
+      - '5555:5432'
+
+  api:
+    depends_on:
+      - database
+    build:
+      dockerfile: 'Dockerfile'
+      context: .
+    environment:
+      DATABASE_URL: 'postgresql://postgres:postgres@localhost:5555/test-nestjs-graphql-prisma'
+      PORT: 3000
+    volumes:
+      - './:/usr/app'
+    ports:
+      - '3000:3000'
