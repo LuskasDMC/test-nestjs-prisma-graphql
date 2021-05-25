@@ -1,0 +1,19 @@
+type User {
+  id: ID!
+  name: String!
+  age: Int!
+  weight: Float
+  posts: [Post]
+}
+
+type Post {
+  id: ID!
+  slug: String!
+  content: String!
+  tag: String!
+  author: User!
+}
+
+type Query {
+  users: [User]
+}
