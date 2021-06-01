@@ -6,7 +6,7 @@ import { PrismaService } from 'src/database/prisma';
 export class UserRepository {
   constructor(private database: PrismaService) {}
 
-  getAll(options?: Prisma.UserFindManyArgs) {
-    return this.database.user.findMany(options);
+  getAll() {
+    return this.database.user.findMany();
   }
 }

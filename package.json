@@ -10,7 +10,7 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "dev": "nest start --watch",
+    "dev": "nest start --debug --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
@@ -21,7 +21,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "prisma:migrate":"DATABASE_URL=postgresql://postgres:postgres@localhost:5555/test-nestjs-graphql-prisma yarn prisma migrate dev",
     "prisma:studio":"DATABASE_URL=postgresql://postgres:postgres@localhost:5555/test-nestjs-graphql-prisma yarn prisma studio",
-    "graphql:generate": "ts-node generate-typings"
+    "graphql:generate": "ts-node src/generate-typings"
   },
   "dependencies": {
     "@apollo/gateway": "^0.28.1",

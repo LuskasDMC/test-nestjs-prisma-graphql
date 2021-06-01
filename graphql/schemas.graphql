@@ -10,7 +10,7 @@ type Post {
   id: ID!
   slug: String!
   content: String!
-  tag: String!
+  tag: [String]!
   author: User!
 }
 

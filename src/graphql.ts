@@ -1,3 +1,4 @@
+
 /*
  * ------------------------------------------------------
  * THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
@@ -18,7 +19,7 @@ export interface Post {
     id: string;
     slug: string;
     content: string;
-    tag: string;
+    tag: string[];
     author: User;
 }
 
