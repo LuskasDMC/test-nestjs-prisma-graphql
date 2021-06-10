@@ -19,8 +19,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "prisma:migrate":"DATABASE_URL=postgresql://postgres:postgres@localhost:5555/test-nestjs-graphql-prisma yarn prisma migrate dev",
-    "prisma:studio":"DATABASE_URL=postgresql://postgres:postgres@localhost:5555/test-nestjs-graphql-prisma yarn prisma studio",
+    "prisma:migrate": "DATABASE_URL=postgresql://postgres:postgres@localhost:5555/test-nestjs-graphql-prisma yarn prisma migrate dev",
+    "prisma:studio": "DATABASE_URL=postgresql://postgres:postgres@localhost:5555/test-nestjs-graphql-prisma yarn prisma studio",
     "graphql:generate": "ts-node src/generate-typings"
   },
   "dependencies": {
@@ -32,6 +32,7 @@
     "@nestjs/platform-express": "^7.6.15",
     "@prisma/client": "^2.22.1",
     "apollo-server-express": "^2.24.0",
+    "class-validator": "^0.13.1",
     "graphql": "^15.5.0",
     "graphql-tools": "^7.0.5",
     "reflect-metadata": "^0.1.13",

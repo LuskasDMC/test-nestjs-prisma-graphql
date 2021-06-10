@@ -1,5 +1,5 @@
 type User {
-  id: ID!
+  id: Int!
   name: String!
   age: Int!
   weight: Float
@@ -7,7 +7,7 @@ type User {
 }
 
 type Post {
-  id: ID!
+  id: Int!
   slug: String!
   content: String!
   tag: [String]!
@@ -16,4 +16,8 @@ type Post {
 
 type Query {
   users: [User]
+}
+
+type Mutation {
+  createUser(name: String!, age: Int!, weight: Float): User
 }

@@ -7,22 +7,26 @@
 
 /* tslint:disable */
 /* eslint-disable */
-export interface User {
-    id: string;
+export class User {
+    id: number;
     name: string;
     age: number;
     weight?: number;
     posts?: Post[];
 }
 
-export interface Post {
-    id: string;
+export class Post {
+    id: number;
     slug: string;
     content: string;
     tag: string[];
     author: User;
 }
 
-export interface IQuery {
-    users(): User[] | Promise<User[]>;
+export abstract class IQuery {
+    abstract users(): User[] | Promise<User[]>;
+}
+
+export abstract class IMutation {
+    abstract createUser(name: string, age: number, weight?: number): User | Promise<User>;
 }

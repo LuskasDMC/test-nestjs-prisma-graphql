@@ -1,5 +1,11 @@
-import { Logger } from '@nestjs/common';
-import { Args, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
+import {
+  Args,
+  Mutation,
+  Parent,
+  Query,
+  ResolveField,
+  Resolver,
+} from '@nestjs/graphql';
 import { User } from '../../graphql';
 import { PostService } from '../post/post.service';
 import { UserService } from './user.service';
@@ -20,21 +26,16 @@ export class UserResolver {
   @ResolveField()
   async posts(@Parent() users: User) {
     const { id } = users;
-    const post = await this.postService.getAllPostsById(
-      id as unknown as number,
-    );
-
-    Logger.log('post->', JSON.stringify(post));
+    const post = await this.postService.getAllPostsById(id);
     return post;
   }
-  // @Query()
-  // async author(@Args('id') id: number) {
-  //   return this.authorsService.findOneById(id);
-  // }
 
-  // @ResolveField()
-  // async posts(@Parent() author) {
-  //   const { id } = author;
-  //   return this.postsService.findAll({ authorId: id });
-  // }
+  @Mutation()
+  async createUser(
+    @Args('name') name: string,
+    @Args('age') age: number,
+    @Args('weight') weight: number,
+  ) {
+    
+  }
 }
